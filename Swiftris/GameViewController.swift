@@ -43,28 +43,19 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         return true
     }
     
-    @IBAction func didTap(sender: UITapGestureRecognizer) {
+    @IBAction func moveRight(sender: UIButton) {
+        swiftris.moveShapeRight()
+    }
+    
+    @IBAction func moveLeft(sender: UIButton) {
+        swiftris.moveShapeLeft()
+    }
+    
+    @IBAction func change(sender: UIButton) {
         swiftris.rotateShape()
     }
     
-    @IBAction func didPan(sender: UIPanGestureRecognizer) {
-        let currentPoint = sender.translationInView(self.view)
-        if let originalPoint = panPointReference {
-            if abs(currentPoint.x - originalPoint.x) > (BlockSize * 0.9) {
-                if sender.velocityInView(self.view).x > CGFloat(0) {
-                    swiftris.moveShapeRight()
-                    panPointReference = currentPoint
-                } else {
-                    swiftris.moveShapeLeft()
-                    panPointReference = currentPoint
-                }
-            }
-        } else if sender.state == .Began {
-            panPointReference = currentPoint
-        }
-    }
-    
-    @IBAction func didSwipe(sender: UISwipeGestureRecognizer) {
+    @IBAction func drop(sender: UIButton) {
         swiftris.dropShape()
     }
     

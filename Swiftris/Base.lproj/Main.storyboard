@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Avenir.ttc">
+            <string>Avenir-Black</string>
+            <string>Avenir-Light</string>
+            <string>Avenir-Black</string>
+            <string>Avenir-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="CtS-rA-C9T">
@@ -60,44 +68,56 @@
                                     </label>
                                 </subviews>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51i-MI-gYn">
+                                <rect key="frame" x="20" y="424" width="60" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="←"/>
+                                <connections>
+                                    <action selector="moveLeft:" destination="LVB-YS-i5n" eventType="touchUpInside" id="qjP-mt-kP4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHC-OR-4sg">
+                                <rect key="frame" x="240" y="424" width="60" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="→"/>
+                                <connections>
+                                    <action selector="moveRight:" destination="LVB-YS-i5n" eventType="touchUpInside" id="wlU-Db-laI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-8w-Iap">
+                                <rect key="frame" x="118" y="424" width="84" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="↓"/>
+                                <connections>
+                                    <action selector="drop:" destination="LVB-YS-i5n" eventType="touchUpInside" id="EHQ-mD-5MW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IE-55-XaO">
+                                <rect key="frame" x="240" y="354" width="60" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="↩︎"/>
+                                <connections>
+                                    <action selector="change:" destination="LVB-YS-i5n" eventType="touchUpInside" id="fcf-Pd-dZf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="9ge-jr-8Iz" appends="YES" id="2VI-Mb-R29"/>
-                            <outletCollection property="gestureRecognizers" destination="s3C-Mx-Ytj" appends="YES" id="Ods-TD-EzA"/>
-                            <outletCollection property="gestureRecognizers" destination="g8e-Mj-EDG" appends="YES" id="eTe-gd-b3d"/>
-                        </connections>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                        <size key="portraitSize" width="320" height="568"/>
-                        <size key="landscapeSize" width="568" height="320"/>
-                    </simulatedScreenMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="levelLabel" destination="nkl-DQ-9XT" id="y3z-8K-0gG"/>
                         <outlet property="scoreLabel" destination="FzF-c9-eO2" id="Ok7-g7-24q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="9ge-jr-8Iz">
-                    <connections>
-                        <action selector="didTap:" destination="LVB-YS-i5n" id="w0L-7F-9VY"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="s3C-Mx-Ytj">
-                    <connections>
-                        <action selector="didPan:" destination="LVB-YS-i5n" id="8pZ-Iw-2kD"/>
-                        <outlet property="delegate" destination="LVB-YS-i5n" id="bS6-PO-gSH"/>
-                    </connections>
-                </panGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="g8e-Mj-EDG">
-                    <connections>
-                        <action selector="didSwipe:" destination="LVB-YS-i5n" id="vgR-DA-18W"/>
-                        <outlet property="delegate" destination="LVB-YS-i5n" id="mLt-II-D3a"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="305" y="346"/>
         </scene>
     </scenes>
     <resources>
